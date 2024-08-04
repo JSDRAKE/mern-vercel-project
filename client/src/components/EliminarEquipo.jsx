@@ -6,7 +6,7 @@ const EliminarEquipo = () => {
 
         <div>
 
-            EliminarEquipo
+            <h2>Eliminar Equipo</h2>
 
         </div>
     )

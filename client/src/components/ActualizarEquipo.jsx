@@ -6,7 +6,7 @@ const ActualizarEquipo = () => {
 
         <div>
 
-            ActualizarEquipo
+            <h2>Actualizar Equipo</h2>
 
         </div>
     )

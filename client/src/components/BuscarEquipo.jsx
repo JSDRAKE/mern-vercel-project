@@ -6,7 +6,7 @@ const BuscarEquipo = () => {
 
         <div>
 
-            Buscar Equipo
+            <h2>Buscar Equipo</h2>
 
         </div>
     )
