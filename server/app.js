@@ -5,6 +5,7 @@ import logger from 'morgan';
 
 
 import indexRouter from './routes/index.js';
+import getRouter from './routes/getRig.js';
 
 
 
@@ -17,5 +18,6 @@ app.use(logger('dev'));
 
 
 app.use('/api/', indexRouter);
+app.use('/api/getRig', getRouter);
 
 export default app;
