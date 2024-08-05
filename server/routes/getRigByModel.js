@@ -1,8 +1,10 @@
 import express from 'express'
 import getRigsController from '../controllers/getRigsController.js'
-const router = express.Router()
-// const { validateModel } = require('../middlewares/validateModel')
+import validateModel from '../middlewares/validateModel.js'
 
-router.get('/:model', getRigsController.getRigByModel)
+const router = express.Router()
+
+
+router.get('/:model', validateModel, getRigsController.getRigByModel)
 
 export default router

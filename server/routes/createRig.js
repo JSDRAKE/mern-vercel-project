@@ -1,10 +1,11 @@
 import express from 'express'
-const router = express.Router()
 import createRigController from '../controllers/createRigController.js'
-// const checks  = require('../middlewares/checks')
-// const { validateChecks } = require('../middlewares/validateChecks')
+import checks from '../middlewares/checks.js'
+import validateCheks from '../middlewares/validateChecks.js'
+
+const router = express.Router()
 
 
-router.post('/',  createRigController.createRig)
+router.post('/',checks, validateCheks,  createRigController.createRig)
 
 export default router

@@ -1,8 +1,9 @@
 import express from 'express'
 import deleteRigContoller from '../controllers/deleteRigContoller.js'
-const router = express.Router()
-// const { validateId } = require('../middlewares/validateId')
+import validateId from '../middlewares/validateId.js'
 
-router.delete('/:id', deleteRigContoller.deleteRig)
+const router = express.Router()
+
+router.delete('/:id', validateId, deleteRigContoller.deleteRig)
 
 export default router
