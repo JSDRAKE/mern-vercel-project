@@ -8,6 +8,8 @@ const BuscarEquipo = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
+    const apiUrl = import.meta.env.VITE_API_BASE_URL
+
     const handleSubmit = async (e) => {
 
         e.preventDefault();
@@ -18,7 +20,7 @@ const BuscarEquipo = () => {
 
         try {
 
-            const response = await fetch(`http://localhost:3000/api/getRigByModel/${nombre}`);
+            const response = await fetch(`${apiUrl}/getRigByModel/${nombre}`);
 
             if (!response.ok) {
 
