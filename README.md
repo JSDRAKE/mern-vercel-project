@@ -35,6 +35,7 @@ Las principales tecnologías y bibliotecas utilizadas en este proyecto son:
 
 La estructura de carpetas del proyecto es la siguiente:
 
+```
 /mern-vercel
 │
 ├── client
@@ -94,7 +95,7 @@ La estructura de carpetas del proyecto es la siguiente:
 │   └── ...
 │
 └── README.md
-
+```
 
 - **client**: Contiene el código fuente del frontend construido con React y Vite.
 - **server**: Contiene el código fuente del backend construido con Node.js y Express.
@@ -113,19 +114,19 @@ Sigue estos pasos para configurar el proyecto en tu máquina local:
 
 1. **Clona el repositorio:**
 
-   ```
-   git clone https://github.com/JSDRAKE/mern-vercel-project.git
-   cd proyecto-mern-fullstack
-   ```
+```
+git clone https://github.com/JSDRAKE/mern-vercel-project.git
+cd proyecto-mern-fullstack
+```
 
 2. **Configura el Backend:**
 
 Navega a la carpeta server y ejecuta
 
-   ```
-   cd server
-   npm install
-   ```
+```
+cd server
+npm install
+```
 
 Crea un archivo .env en la raíz de la carpeta server y añade tus variables de entorno:
 
