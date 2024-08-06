@@ -10,8 +10,6 @@ Este es un proyecto FullStack que utiliza el stack MERN (MongoDB, Express, React
 - [Requisitos Previos](#requisitos-previos)
 - [Instalación](#instalación)
 - [Uso](#uso)
-- [Scripts Disponibles](#scripts-disponibles)
-- [Contribuciones](#contribuciones)
 - [Licencia](#licencia)
 
 ## Introducción
@@ -40,62 +38,63 @@ La estructura de carpetas del proyecto es la siguiente:
 /mern-vercel
 │
 ├── client
-│ ├── public
-│ ├── src
-│ │ ├── components
-│ │ | └── ActualizarEquipo.jsx
-│ │ | └── AgregarEquipo.jsx
-│ │ | └── BuscarEquipo.jsx
-│ │ | └── EliminarEquipo.jsx
-│ │ | └── Home.jsx
-│ │ ├── styles
-│ │ | └── AgregarEquipo.css
-│ │ | └── App.css
-│ │ | └── BuscarEquipo.css
-│ │ ├── App.jsx
-│ │ ├── main.jsx
-│ │ ├── ...
-│ ├── .eslintrc.cjs
-│ ├── .gitignore
-│ ├── index.html
-│ ├── package.json
-│ ├── vite.config.js
-│ ├── README.md
-│ └── ...
+│   ├── public
+│   ├── src
+│   │   ├── components
+│   │   │   ├── ActualizarEquipo.jsx
+│   │   │   ├── AgregarEquipo.jsx
+│   │   │   ├── BuscarEquipo.jsx
+│   │   │   ├── EliminarEquipo.jsx
+│   │   │   └── Home.jsx
+│   │   ├── styles
+│   │   │   ├── AgregarEquipo.css
+│   │   │   ├── App.css
+│   │   │   └── BuscarEquipo.css
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── ...
+│   ├── .eslintrc.cjs
+│   ├── .gitignore
+│   ├── index.html
+│   ├── package.json
+│   ├── vite.config.js
+│   ├── README.md
+│   └── ...
 │
 ├── server
-│ ├── controllers
-│ │ | └── apiExternaController.js
-│ │ | └── createRigController.js
-│ │ | └── deleteRigController.js
-│ │ | └── getRigControler.js
-│ │ | └── indexController.js
-│ │ | └── updateRigController.js
-│ ├── db
-│ │ └── db.js
-│ ├── middleware
-│ │ | └── checks.js
-│ │ | └── validatechecks.js
-│ │ | └── validateId.js
-│ │ | └── validateModel.js
-│ ├── models
-│ │ └── rig.model.js
-│ ├── routes
-│ │ | └── apiExterna.js
-│ │ | └── createRig.js
-│ │ | └── delteteRig.js
-│ │ | └── getRig.js
-│ │ | └── getRigByModel.js
-│ │ | └── index.js
-│ │ | └── updateRig.js
-│ ├── .gitignore
-│ ├── app.js
-│ ├── index.js
-│ ├── package.json
-│ ├── vercel.json
-│ └── ...
+│   ├── controllers
+│   │   ├── apiExternaController.js
+│   │   ├── createRigController.js
+│   │   ├── deleteRigController.js
+│   │   ├── getRigControler.js
+│   │   ├── indexController.js
+│   │   └── updateRigController.js
+│   ├── db
+│   │   └── db.js
+│   ├── middleware
+│   │   ├── checks.js
+│   │   ├── validatechecks.js
+│   │   ├── validateId.js
+│   │   └── validateModel.js
+│   ├── models
+│   │   └── rig.model.js
+│   ├── routes
+│   │   ├── apiExterna.js
+│   │   ├── createRig.js
+│   │   ├── deleteRig.js
+│   │   ├── getRig.js
+│   │   ├── getRigByModel.js
+│   │   ├── index.js
+│   │   └── updateRig.js
+│   ├── .gitignore
+│   ├── app.js
+│   ├── index.js
+│   ├── package.json
+│   ├── vercel.json
+│   └── ...
 │
 └── README.md
+
 
 - **client**: Contiene el código fuente del frontend construido con React y Vite.
 - **server**: Contiene el código fuente del backend construido con Node.js y Express.
@@ -166,4 +165,5 @@ npm run dev
 Esto iniciará la aplicación React en `http://localhost:5173`.
 
 La aplicación estará disponible en `http://locahlhost:5173` y estará conectada al backen en `http://localhost:3000`.
+
 
