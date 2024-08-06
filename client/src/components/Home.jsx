@@ -85,8 +85,6 @@ const Home = () => {
 
             <h1>Proyecto MERN -- FullStack</h1>
 
-            <h2>Opciones</h2>
-
             <div id='botones'>
 
                 <button onClick={handleBuscarEquipo}>
@@ -114,6 +112,8 @@ const Home = () => {
                 </button>
 
             </div>
+
+            <hr />
 
             {mostrarBuscarEquipo && (
 
