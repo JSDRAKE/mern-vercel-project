@@ -32,3 +32,19 @@ button {
     padding: 10px 20px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+    #botones {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+    
+}
