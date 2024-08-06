@@ -17,6 +17,7 @@ input {
     height: 50px;
     font-size: 20px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 
@@ -43,7 +44,7 @@ h3 {
     margin: 20px;
     padding: 20px;
     border-radius: 10px;
-    background-color: #1a1a1a;
+    background-color: #2e2d2d;
     box-shadow: 0 0 10px #000;
     color: white;
 }
