@@ -69,10 +69,15 @@ const BuscarEquipo = () => {
 
     }
 
+    function handleReset() {
 
+        setNombre('');
 
+        setResultado(false);
 
+    }
 
+    
     return (
 
         <div>
@@ -91,16 +96,25 @@ const BuscarEquipo = () => {
                     onChange={(e) => setNombre(e.target.value)}
                 />
 
+                <div className='button-container'>
+
                 <button type='submit' onClick={handleResultado}>Buscar</button>
+
+                <button type='reset' onClick={handleReset} >Limpiar</button>
+
+                </div>
 
             </form>
 
             {resultado && (
 
                 <div>
+                    <div className='search'>
 
-                    {loading && <p>Cargando...</p>}
+                    {loading && <p>Buscando...</p>}
                     {error && <p style={{ color: 'red' }}>{error}</p>}
+
+                    </div>
 
                     {equipo && (
 
