@@ -1,0 +1,28 @@
+#borrar-equipo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+label {
+  color: white;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+input {
+  color: white;
+  width: 300px;
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#p-borrar-equipo {
+  color: Red;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 35px;
+}

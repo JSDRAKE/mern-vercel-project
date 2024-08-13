@@ -1,29 +1,50 @@
-import React from 'react'
+import React, { useState } from "react";
+import axios from "axios";
+import "../styles/BorrarEquipo.css";
 
 const EliminarEquipo = () => {
+  const [model, setModel] = useState("");
+  const [message, setMessage] = useState("");
 
-    return (
+  const handleDelete = async (e) => {
+    e.preventDefault();
 
-        <div>
+    try {
+      const apiUrl = import.meta.env.VITE_API_BASE_URL;
+      const response = await axios.delete(`${apiUrl}/deleteRig/${model}`);
 
-            <div>
+      if (response.status === 200) {
+        setMessage(`Equipo con modelo "${model}" eliminado con éxito.`);
+      }
+    } catch (error) {
+      setMessage(`Error al eliminar el equipo con modelo "${model}".`);
+    }
 
-                <h2>Eliminar Equipo</h2>
+    setModel("");
+  };
 
-                <form id='buscar-equipo'>
+  return (
+    <div>
+      <div>
+        <h2>Eliminar Equipo</h2>
 
-                    <label htmlFor='nombre'>Modelo:</label>
+        <form id="borrar-equipo" onSubmit={handleDelete}>
+          <label htmlFor="model">Modelo:</label>
 
-                    <input type='text' id='nombre' name='nombre' />
+          <input
+            type="text"
+            id="model"
+            name="model"
+            value={model}
+            onChange={(e) => setModel(e.target.value)}
+          />
 
-                    <button type='submit'>Eliminar</button>
+          <button type="submit">Eliminar</button>
+        </form>
+        {message && <p id="p-borrar-equipo">{message}</p>}
+      </div>
+    </div>
+  );
+};
 
-                </form>
-
-            </div>
-
-        </div>
-    )
-}
-
-export default EliminarEquipo
+export default EliminarEquipo;
