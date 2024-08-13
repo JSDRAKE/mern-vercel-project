@@ -1,9 +1,9 @@
-import express from 'express'
-import deleteRigContoller from '../controllers/deleteRigContoller.js'
-import validateId from '../middlewares/validateId.js'
+import express from "express";
+import deleteRigContoller from "../controllers/deleteRigContoller.js";
+import validateModelForDelete from "../middlewares/validateModelForDelete.js";
 
-const router = express.Router()
+const router = express.Router();
 
-router.delete('/:id', validateId, deleteRigContoller.deleteRig)
+router.delete("/:model", validateModelForDelete, deleteRigContoller.deleteRig);
 
-export default router
+export default router;
