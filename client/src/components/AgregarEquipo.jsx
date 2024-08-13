@@ -1,87 +1,177 @@
-import React from 'react'
-import '../styles/AgregarEquipo.css'
+import React, { useState } from "react";
+import axios from "axios";
+import "../styles/AgregarEquipo.css";
 
 const AgregarEquipo = () => {
+  const [formData, setFormData] = useState({
+    brand: "",
+    model: "",
+    type: "",
+    frecuencyRange: "",
+    mode: "",
+    powerSupply: "",
+    manufactured: "",
+    img: "",
+  });
 
-    return (
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(false);
 
-        <div>
+  const apiUrl = import.meta.env.VITE_API_BASE_URL;
 
-            <h2>Agregar Equipo</h2>
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
 
-            <form id='formulario-agregar' action="">
+      [e.target.name]: e.target.value,
+    });
+  };
 
-                <div className="form-group">
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
+    setSuccess(false);
 
-                    <label htmlFor="brand">Marca: </label>
+    try {
+      const response = await axios.post(`${apiUrl}/createRig`, formData);
 
-                    <input type="text" name="marca" id="marca" className="form-control" />
+      if (response.status === 201) {
+        setSuccess(true);
 
-                </div>
+        setFormData({
+          brand: "",
+          model: "",
+          type: "",
+          frecuencyRange: "",
+          mode: "",
+          powerSupply: "",
+          manufactured: "",
+          img: "",
+        });
+      }
+    } catch (error) {
+      setError(error.response.data.message || "Error al agregar el equipo");
+    }
+  };
 
-                <div className="form-group">
+  return (
+    <div>
+      <h2>Agregar Equipo</h2>
+      <form id="formulario-agregar" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label htmlFor="brand">Marca: </label>
 
-                    <label htmlFor="model">Modelo: </label>
-
-                    <input type="text" name="modelo" id="modelo" className="form-control" />
-
-                </div>
-
-                <div className="form-group">
-
-                    <label htmlFor='type'>Tipo: </label>
-
-                    <input type="text" name="tipo" id="tipo" className="form-control" />
-
-                </div>
-
-                <div className="form-group">
-
-                    <label htmlFor='frecuency-range'>Rango de Frecuencia: </label>
-
-                    <input type="text" name="rangoFrecuencia" id="rangoFrecuencia" className="form-control" />
-
-                </div>
-
-                <div className="form-group">
-
-                    <label htmlFor='model'>Modos: </label>
-
-                    <input type="text" name="modos" id="modos" className="form-control" />
-
-                </div>
-
-                <div className="form-group">
-
-                    <label htmlFor='power-supply'>Alimentación: </label>
-
-                    <input type="text" name="alimentacion" id="alimentacion" className="form-control" />
-
-                </div>
-
-                <div className="form-group">
-
-                    <label htmlFor='manufactured-year'>Año de Fabricación: </label>
-
-                    <input type="text" name="anioFabricacion" id="anioFabricacion" className="form-control" />
-
-                </div>
-
-                <div className="form-group">
-
-                    <label htmlFor='img'>Imagen: </label>
-
-                    <input type="text" name="imagen" id="imagen" className="form-control" />
-
-                </div>
-
-                <button type="submit" className="btn btn-primary">Agregar Equipo</button>
-
-
-            </form>
-
+          <input
+            type="text"
+            name="brand"
+            id="brand"
+            className="form-control"
+            value={formData.brand}
+            onChange={handleChange}
+          />
         </div>
-    )
-}
 
-export default AgregarEquipo
+        <div className="form-group">
+          <label htmlFor="model">Modelo: </label>
+
+          <input
+            type="text"
+            name="model"
+            id="model"
+            className="form-control"
+            value={formData.model}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="type">Tipo: </label>
+
+          <input
+            type="text"
+            name="type"
+            id="type"
+            className="form-control"
+            value={formData.type}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="frecuencyRange">Rango de Frecuencia: </label>
+
+          <input
+            type="text"
+            name="frecuencyRange"
+            id="frecuencyRange"
+            className="form-control"
+            value={formData.frecuencyRange}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="model">Modos: </label>
+
+          <input
+            type="text"
+            name="mode"
+            id="mode"
+            className="form-control"
+            value={formData.mode}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="power-supply">Alimentación: </label>
+
+          <input
+            type="text"
+            name="powerSupply"
+            id="powerSupply"
+            className="form-control"
+            value={formData.powerSupply}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="manufacturedr">Año de Fabricación: </label>
+
+          <input
+            type="text"
+            name="manufactured"
+            id="manufactured"
+            className="form-control"
+            value={formData.manufactured}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="img">Imagen: </label>
+
+          <input
+            type="text"
+            name="img"
+            id="img"
+            className="form-control"
+            value={formData.img}
+            onChange={handleChange}
+          />
+        </div>
+
+        <button type="submit" className="btn btn-primary">
+          Agregar Equipo
+        </button>
+      </form>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {success && (
+        <p style={{ color: "green" }}>Equipo agregado correctamente</p>
+      )}
+    </div>
+  );
+};
+
+export default AgregarEquipo;
